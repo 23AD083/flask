@@ -6,18 +6,24 @@
     <title>Document</title>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+    <style> body { background-color:forestgreen; /* Baby pink color */ } 
+    text{color:white;}</style>
 </head>
 <body>
+
     <div style="margin-top:50px">
-    <h1 class="ui center aligned header ">Todo App </h1>
+    <h1 class="ui center aligned header ">  FILE DETAILS  </h1>
     
     <form class="uiform" action="/add" method="POST">
         <div class="field">
-            <label for="todo">Todo</label>
-                <input type="text" name="todo" id="todo" placeholder="Add Todo">
+            <br>
+            <label for="todo">FILE NAME:</label>
+            <br>
+                <input type="text" name="todo" id="todo" placeholder="Enter file name..">
                 <br>
-                <button type="submit">Add</button>
+                <br><button type="submit"> Create </button>
               <br>  
+              <br>
         </div>
     </form>
     {% for todo in todo_list %}
@@ -27,16 +33,17 @@
             {{todo.id}} | {{todo.title}}
         </p>
         {% if todo.complete ==false%}
-            <span class="ui gray label">NOT DONE</span>
+            <span class="ui gray label"> Tab to create file</span>
             {% else %}
         
-            <span class="ui green label">DONE</span>
+            <span class="ui green label"> FILE CREATED SUCCESSFULLY!!</span>
             {% endif %}
-            <a class=" ui blue button" href="/update/{{todo.id}}">Update</a>
-            <a class=" ui red button"href="/delete/{{todo.id}}">Delete</a>
+            <BR>
+                <br>
+            <a class=" ui blue button" href="/update/{{todo.id}}">CREATE</a>
+            <a class=" ui red button"href="/delete/{{todo.id}}">DELETE</a>
     </div>
     {% endfor %}
     </div>
-
 </body>
-</html>
+</html> 
